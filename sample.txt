@@ -27,7 +27,7 @@ public class Test {
         System.out.print( user.getHash() );
 
 
-        System.out.print( "Insert password please: " );
+        System.out.print( "Insert password NOW!!!!!: " );
         input = scanner.nextLine();
         User user2 = new User(input);
 
