@@ -1,1 +1,40 @@
-Goodbye my lovely world and hello. my name is dean.
+package prove01;
+
+import java.util.Scanner;
+
+import static prove01.NSALoginController.hashUserPassword;
+import static prove01.NSALoginController.verifyPassword;
+
+public class Test {
+
+    private static Scanner scanner = new Scanner( System.in );
+
+    public static void main(String[] args) {
+        // write your code here
+        System.out.print( "Insert password please: " );
+        String input = scanner.nextLine();
+        User user = new User(input);
+        System.out.print( user.getPassword() );
+
+        try {
+            hashUserPassword(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.print( user.getPassword() );
+        System.out.print( user.getSalt() );
+        System.out.print( user.getHash() );
+
+
+        System.out.print( "Insert password please: " );
+        input = scanner.nextLine();
+        User user2 = new User(input);
+
+        try {
+            verifyPassword(user2);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
